@@ -1,0 +1,2073 @@
+  [1m[36m (124.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (99.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20140926055038)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "password" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140926055038"]]
+  [1m[36m (100.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/users" for 127.0.0.1 at 2014-09-26 11:21:02 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 906ms (Views: 889.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 11:21:04 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 11:21:04 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 11:21:04 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 11:21:04 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 11:21:04 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 11:21:04 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 11:21:04 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 11:21:04 +0530
+
+
+Started GET "/users/new" for 127.0.0.1 at 2014-09-26 11:21:11 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (68.3ms)
+  Rendered users/new.html.erb within layouts/application (105.0ms)
+Completed 200 OK in 112ms (Views: 109.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-09-26 11:21:19 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VxtCkAOFINEXHXPh5sv3DB5BHLvbnAByn+jdvci960c=", "user"=>{"name"=>"harsh", "password"=>"[FILTERED]", "email"=>"beep"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (62.9ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "password", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Fri, 26 Sep 2014 05:51:19 UTC +00:00], ["email", "beep"], ["name", "harsh"], ["password", "beep"], ["updated_at", Fri, 26 Sep 2014 05:51:19 UTC +00:00]]
+  [1m[36m (123.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 192ms (ActiveRecord: 186.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-09-26 11:21:19 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 11:21:19 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 11:21:19 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 11:21:19 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 11:21:19 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 11:21:19 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 11:21:19 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 11:21:19 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 11:21:19 +0530
+
+
+Started GET "/users" for 127.0.0.1 at 2014-09-26 11:21:22 +0530
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/1" for 127.0.0.1 at 2014-09-26 11:21:28 +0530
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VxtCkAOFINEXHXPh5sv3DB5BHLvbnAByn+jdvci960c=", "id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 1]]
+  [1m[36m (107.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 113ms (ActiveRecord: 108.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-09-26 11:21:28 +0530
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 11:21:29 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 11:21:29 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 11:21:29 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 11:21:29 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 11:21:29 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 11:21:29 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 11:21:29 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 11:21:29 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUser1s (20140926055516)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "user1s" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "password_digest" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140926055516"]]
+  [1m[36m (365.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/users/new" for 127.0.0.1 at 2014-09-26 11:36:21 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (51.0ms)
+  Rendered users/new.html.erb within layouts/application (52.6ms)
+Completed 200 OK in 279ms (Views: 274.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 11:36:21 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 11:36:21 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 11:36:21 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 11:36:21 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 11:36:21 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 11:36:21 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 11:36:21 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 11:36:21 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 11:36:21 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 11:36:21 +0530
+
+
+Started POST "/users" for 127.0.0.1 at 2014-09-26 11:37:20 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VxtCkAOFINEXHXPh5sv3DB5BHLvbnAByn+jdvci960c=", "user"=>{"name"=>"Hrash", "password"=>"[FILTERED]", "email"=>"beepagain"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 26 Sep 2014 06:07:20 UTC +00:00], ["email", "beepagain"], ["name", "Hrash"], ["password", "beepagain"], ["updated_at", Fri, 26 Sep 2014 06:07:20 UTC +00:00]]
+  [1m[35m (97.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 105ms (ActiveRecord: 98.4ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2014-09-26 11:37:20 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 11:37:20 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 11:37:20 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 11:37:20 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 11:37:20 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 11:37:20 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 11:37:20 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 11:37:20 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 11:37:20 +0530
+
+
+Started GET "/users" for 127.0.0.1 at 2014-09-26 11:37:23 +0530
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user1s/new" for 127.0.0.1 at 2014-09-26 11:37:42 +0530
+Processing by User1sController#new as HTML
+Completed 500 Internal Server Error in 4ms
+
+Gem::LoadError (bcrypt-ruby is not part of the bundle. Add it to Gemfile.):
+  app/models/user1.rb:2:in `<class:User1>'
+  app/models/user1.rb:1:in `<top (required)>'
+  app/controllers/user1s_controller.rb:18:in `new'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.2ms)
+
+
+Started GET "/user1" for 127.0.0.1 at 2014-09-26 11:37:47 +0530
+
+ActionController::RoutingError (No route matches [GET] "/user1"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (71.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (147.1ms)
+
+
+Started GET "/user1s/new" for 127.0.0.1 at 2014-09-26 11:38:05 +0530
+Processing by User1sController#new as HTML
+Completed 500 Internal Server Error in 5ms
+
+Gem::LoadError (bcrypt-ruby is not part of the bundle. Add it to Gemfile.):
+  app/models/user1.rb:2:in `<class:User1>'
+  app/models/user1.rb:1:in `<top (required)>'
+  app/controllers/user1s_controller.rb:18:in `new'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.1ms)
+
+
+Started GET "/user1s/new" for 127.0.0.1 at 2014-09-26 11:39:04 +0530
+Processing by User1sController#new as HTML
+Completed 500 Internal Server Error in 3ms
+
+Gem::LoadError (bcrypt-ruby is not part of the bundle. Add it to Gemfile.):
+  app/models/user1.rb:2:in `<class:User1>'
+  app/models/user1.rb:1:in `<top (required)>'
+  app/controllers/user1s_controller.rb:18:in `new'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.5ms)
+
+
+Started GET "/user1s/new" for 127.0.0.1 at 2014-09-26 11:39:05 +0530
+Processing by User1sController#new as HTML
+Completed 500 Internal Server Error in 3ms
+
+Gem::LoadError (bcrypt-ruby is not part of the bundle. Add it to Gemfile.):
+  app/models/user1.rb:2:in `<class:User1>'
+  app/models/user1.rb:1:in `<top (required)>'
+  app/controllers/user1s_controller.rb:18:in `new'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.3ms)
+
+
+Started GET "/user1s/new" for 127.0.0.1 at 2014-09-26 11:39:05 +0530
+Processing by User1sController#new as HTML
+Completed 500 Internal Server Error in 4ms
+
+Gem::LoadError (bcrypt-ruby is not part of the bundle. Add it to Gemfile.):
+  app/models/user1.rb:2:in `<class:User1>'
+  app/models/user1.rb:1:in `<top (required)>'
+  app/controllers/user1s_controller.rb:18:in `new'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.7ms)
+
+
+Started GET "/user1s/new" for 127.0.0.1 at 2014-09-26 11:39:52 +0530
+Processing by User1sController#new as HTML
+Completed 500 Internal Server Error in 2ms
+
+Gem::LoadError (bcrypt-ruby is not part of the bundle. Add it to Gemfile.):
+  app/models/user1.rb:2:in `<class:User1>'
+  app/models/user1.rb:1:in `<top (required)>'
+  app/controllers/user1s_controller.rb:18:in `new'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.0ms)
+
+
+Started GET "/user1s/new" for 127.0.0.1 at 2014-09-26 11:42:18 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by User1sController#new as HTML
+  Rendered user1s/_form.html.erb (61.2ms)
+  Rendered user1s/new.html.erb within layouts/application (67.8ms)
+Completed 200 OK in 235ms (Views: 128.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 11:42:19 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 11:42:19 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 11:42:19 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 11:42:19 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 11:42:19 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 11:42:19 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 11:42:19 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 11:42:19 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 11:42:19 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 11:42:19 +0530
+
+
+Started POST "/user1s" for 127.0.0.1 at 2014-09-26 11:42:46 +0530
+Processing by User1sController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VxtCkAOFINEXHXPh5sv3DB5BHLvbnAByn+jdvci960c=", "user1"=>{"name"=>"hrash", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"hrsh@beep.com"}, "commit"=>"Create User1"}
+  [1m[35m (0.2ms)[0m  begin transaction
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (6.5ms)[0m  [1mINSERT INTO "user1s" ("created_at", "email", "name", "password_digest", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 26 Sep 2014 06:12:46 UTC +00:00], ["email", "hrsh@beep.com"], ["name", "hrash"], ["password_digest", "$2a$10$wCRFvq9dV/rppIx4W8T2.eB5UekmKCV5ob4LTU52q94VbDegkVge."], ["updated_at", Fri, 26 Sep 2014 06:12:46 UTC +00:00]]
+  [1m[35m (95.5ms)[0m  commit transaction
+Completed 500 Internal Server Error in 230ms
+
+NameError (undefined local variable or method `user1' for #<User1sController:0x007ff5284a47a8>):
+  app/controllers/user1s_controller.rb:32:in `block (2 levels) in create'
+  app/controllers/user1s_controller.rb:30:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.1ms)
+
+
+Started POST "/user1s" for 127.0.0.1 at 2014-09-26 11:43:47 +0530
+Processing by User1sController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VxtCkAOFINEXHXPh5sv3DB5BHLvbnAByn+jdvci960c=", "user1"=>{"name"=>"hrash", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"hrsh@beep.com"}, "commit"=>"Create User1"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "user1s" ("created_at", "email", "name", "password_digest", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Fri, 26 Sep 2014 06:13:47 UTC +00:00], ["email", "hrsh@beep.com"], ["name", "hrash"], ["password_digest", "$2a$10$/0NdsL7YtuhkOtx1Fkqf/uS2sR1JnkGnjX0S2OQusfr4A6plPHePe"], ["updated_at", Fri, 26 Sep 2014 06:13:47 UTC +00:00]]
+  [1m[36m (125.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/user1s
+Completed 302 Found in 272ms (ActiveRecord: 126.6ms)
+
+
+Started GET "/user1s" for 127.0.0.1 at 2014-09-26 11:43:47 +0530
+Processing by User1sController#index as HTML
+  [1m[35mUser1 Load (0.3ms)[0m  SELECT "user1s".* FROM "user1s" ORDER BY "user1s".name ASC
+  Rendered user1s/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 11:43:48 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 11:43:48 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 11:43:48 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 11:43:48 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 11:43:48 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 11:43:48 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 11:43:48 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 11:43:48 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 11:43:48 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 11:43:48 +0530
+
+
+Started DELETE "/user1s/2" for 127.0.0.1 at 2014-09-26 11:43:55 +0530
+Processing by User1sController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VxtCkAOFINEXHXPh5sv3DB5BHLvbnAByn+jdvci960c=", "id"=>"2"}
+  [1m[36mUser1 Load (0.3ms)[0m  [1mSELECT "user1s".* FROM "user1s" WHERE "user1s"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "user1s" WHERE "user1s"."id" = ?[0m  [["id", 2]]
+  [1m[35m (123.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/user1s
+Completed 302 Found in 133ms (ActiveRecord: 124.6ms)
+
+
+Started GET "/user1s" for 127.0.0.1 at 2014-09-26 11:43:55 +0530
+Processing by User1sController#index as HTML
+  [1m[36mUser1 Load (0.2ms)[0m  [1mSELECT "user1s".* FROM "user1s" ORDER BY "user1s".name ASC[0m
+  Rendered user1s/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 11:43:55 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 11:43:55 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 11:43:55 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 11:43:55 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 11:43:55 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 11:43:55 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 11:43:55 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 11:43:55 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 11:43:55 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 11:43:55 +0530
+
+
+Started DELETE "/user1s/1" for 127.0.0.1 at 2014-09-26 11:43:58 +0530
+Processing by User1sController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VxtCkAOFINEXHXPh5sv3DB5BHLvbnAByn+jdvci960c=", "id"=>"1"}
+  [1m[35mUser1 Load (0.2ms)[0m  SELECT "user1s".* FROM "user1s" WHERE "user1s"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "user1s" WHERE "user1s"."id" = ?  [["id", 1]]
+  [1m[36m (370.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/user1s
+Completed 302 Found in 376ms (ActiveRecord: 371.5ms)
+
+
+Started GET "/user1s" for 127.0.0.1 at 2014-09-26 11:43:58 +0530
+Processing by User1sController#index as HTML
+  [1m[35mUser1 Load (0.4ms)[0m  SELECT "user1s".* FROM "user1s" ORDER BY "user1s".name ASC
+  Rendered user1s/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 11:43:58 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 11:43:58 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 11:43:58 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 11:43:58 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 11:43:58 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 11:43:58 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 11:43:58 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 11:43:58 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 11:43:58 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 11:43:58 +0530
+
+
+Started GET "/user1s/new" for 127.0.0.1 at 2014-09-26 11:43:59 +0530
+Processing by User1sController#new as HTML
+  Rendered user1s/_form.html.erb (4.6ms)
+  Rendered user1s/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user1s" for 127.0.0.1 at 2014-09-26 11:44:07 +0530
+Processing by User1sController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VxtCkAOFINEXHXPh5sv3DB5BHLvbnAByn+jdvci960c=", "user1"=>{"name"=>"admin", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"admin@me"}, "commit"=>"Create User1"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "user1s" ("created_at", "email", "name", "password_digest", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Fri, 26 Sep 2014 06:14:07 UTC +00:00], ["email", "admin@me"], ["name", "admin"], ["password_digest", "$2a$10$.hBtCbh4XOsuH3obLhXZpeIrJ0q7hBkHaZjypw3zvXA1FJdp8v5rm"], ["updated_at", Fri, 26 Sep 2014 06:14:07 UTC +00:00]]
+  [1m[36m (143.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/user1s
+Completed 302 Found in 269ms (ActiveRecord: 144.3ms)
+
+
+Started GET "/user1s" for 127.0.0.1 at 2014-09-26 11:44:07 +0530
+Processing by User1sController#index as HTML
+  [1m[35mUser1 Load (0.2ms)[0m  SELECT "user1s".* FROM "user1s" ORDER BY "user1s".name ASC
+  Rendered user1s/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 11:44:08 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 11:44:08 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 11:44:08 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 11:44:08 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 11:44:08 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 11:44:08 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 11:44:08 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 11:44:08 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 11:44:08 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 11:44:08 +0530
+
+
+Started GET "/sessions/create" for 127.0.0.1 at 2014-09-26 12:02:31 +0530
+Processing by SessionsController#create as HTML
+Completed 500 Internal Server Error in 3ms
+
+NameError (undefined local variable or method `user1' for #<SessionsController:0x007ff51045c650>):
+  app/controllers/sessions_controller.rb:6:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (42.4ms)
+
+
+Started GET "/sessions/create" for 127.0.0.1 at 2014-09-26 12:11:42 +0530
+Processing by SessionsController#create as HTML
+  [1m[36mUser1 Load (0.4ms)[0m  [1mSELECT "user1s".* FROM "user1s" WHERE "user1s"."name" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 43ms
+
+NameError (undefined local variable or method `login_url' for #<SessionsController:0x007ff528d7fa30>):
+  app/controllers/sessions_controller.rb:18:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.7ms)
+
+
+Started GET "/sessions/create" for 127.0.0.1 at 2014-09-26 12:19:56 +0530
+Processing by SessionsController#create as HTML
+  [1m[35mUser1 Load (0.4ms)[0m  SELECT "user1s".* FROM "user1s" WHERE "user1s"."name" IS NULL LIMIT 1
+Redirected to http://localhost:3000/login
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-09-26 12:19:56 +0530
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 625ms (Views: 624.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 12:19:57 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 12:19:57 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 12:19:57 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 12:19:57 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 12:19:57 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 12:19:57 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-09-26 12:19:57 +0530
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-09-26 12:19:57 +0530
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-09-26 12:19:57 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 12:19:57 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-09-26 12:19:57 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 12:19:57 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 12:19:57 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 12:19:57 +0530
+
+
+Started POST "/sessions/new" for 127.0.0.1 at 2014-09-26 12:20:13 +0530
+
+ActionController::RoutingError (No route matches [POST] "/sessions/new"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (31.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (58.0ms)
+
+
+Started GET "/sessions/create" for 127.0.0.1 at 2014-09-26 12:22:47 +0530
+Processing by SessionsController#create as HTML
+  [1m[36mUser1 Load (0.3ms)[0m  [1mSELECT "user1s".* FROM "user1s" WHERE "user1s"."name" IS NULL LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-09-26 12:22:47 +0530
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 24ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 12:22:47 +0530
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-09-26 12:22:47 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 12:22:47 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 12:22:47 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 12:22:47 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-09-26 12:22:47 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 12:22:47 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 12:22:47 +0530
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-09-26 12:22:47 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 12:22:47 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-09-26 12:22:47 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 12:22:47 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 12:22:47 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 12:22:47 +0530
+
+
+Started POST "/sessions/new" for 127.0.0.1 at 2014-09-26 12:22:52 +0530
+
+ActionController::RoutingError (No route matches [POST] "/sessions/new"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (22.7ms)
+
+
+Started POST "/sessions/new" for 127.0.0.1 at 2014-09-26 12:26:09 +0530
+
+ActionController::RoutingError (No route matches [POST] "/sessions/new"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (24.1ms)
+
+
+Started POST "/sessions/new" for 127.0.0.1 at 2014-09-26 12:26:12 +0530
+
+ActionController::RoutingError (No route matches [POST] "/sessions/new"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (28.6ms)
+
+
+Started GET "/sessions/" for 127.0.0.1 at 2014-09-26 12:26:25 +0530
+
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (47.6ms)
+
+
+Started GET "/sessions/" for 127.0.0.1 at 2014-09-26 12:26:27 +0530
+
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (22.6ms)
+
+
+Started GET "/sessions/" for 127.0.0.1 at 2014-09-26 12:28:15 +0530
+
+NameError (uninitialized constant Depot):
+  config/routes.rb:9:in `<top (required)>'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.1ms)
+
+
+Started GET "/sessions/" for 127.0.0.1 at 2014-09-26 12:28:30 +0530
+
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (20.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2014-09-26 12:28:35 +0530
+
+ActionController::RoutingError (No route matches [GET] "/sessions/new"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (21.2ms)
+
+
+Started GET "/sessions/create" for 127.0.0.1 at 2014-09-26 12:28:40 +0530
+Processing by SessionsController#create as HTML
+  [1m[35mUser1 Load (0.4ms)[0m  SELECT "user1s".* FROM "user1s" WHERE "user1s"."name" IS NULL LIMIT 1
+Redirected to http://localhost:3000/login
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-09-26 12:28:40 +0530
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 12:28:41 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 12:28:41 +0530
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-09-26 12:28:41 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 12:28:41 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-09-26 12:28:41 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 12:28:41 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 12:28:41 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 12:28:41 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 12:28:41 +0530
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-09-26 12:28:41 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-09-26 12:28:41 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 12:28:41 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 12:28:41 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 12:28:41 +0530
+
+
+Started POST "/login" for 127.0.0.1 at 2014-09-26 12:29:02 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VxtCkAOFINEXHXPh5sv3DB5BHLvbnAByn+jdvci960c=", "name"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser1 Load (0.2ms)[0m  [1mSELECT "user1s".* FROM "user1s" WHERE "user1s"."name" = 'admin' LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 162ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2014-09-26 12:29:03 +0530
+Processing by AdminController#index as HTML
+ERROR: compiling _app_views_admin_index_html_erb___1859020565963728999_70345459304140 RAISED /home/ambar/Desktop/LIY/liy/app/views/admin/index.html.erb:5: syntax error, unexpected ')'
+<h2> ';@output_buffer.append=( Time.now() <);@output_buffer.to_s
+                                            ^
+/home/ambar/Desktop/LIY/liy/app/views/admin/index.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+/home/ambar/Desktop/LIY/liy/app/views/admin/index.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+Function body:           def _app_views_admin_index_html_erb___1859020565963728999_70345459304140(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "admin/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_append='<!-- <h1>Admin#index</h1>
+<p>Find me in app/views/admin/index.html.erb</p>
+<h1> -->
+<h1> Welcome </h1>
+<h2> ';@output_buffer.append=( Time.now() <);@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:299:in `module_eval'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:299:in `compile'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:248:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:236:in `compile!'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:142:in `block in render'
+/var/lib/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:161:in `instrument'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:141:in `render'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:49:in `block (2 levels) in render_template'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/var/lib/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:159:in `block in instrument'
+/var/lib/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/var/lib/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:159:in `instrument'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:48:in `block in render_template'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:56:in `render_with_layout'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:47:in `render_template'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:17:in `render'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/renderer.rb:42:in `render_template'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/renderer.rb:23:in `render'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/rendering.rb:127:in `_render_template'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/streaming.rb:219:in `_render_template'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/rendering.rb:120:in `render_to_body'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/rendering.rb:97:in `render'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rendering.rb:16:in `render'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+/var/lib/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+/usr/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/var/lib/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/core_ext/benchmark.rb:12:in `ms'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+/var/lib/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/base.rb:189:in `process_action'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/var/lib/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:403:in `_run__2788208824870162303__process_action__callbacks'
+/var/lib/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:80:in `run_callbacks'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+/var/lib/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:159:in `block in instrument'
+/var/lib/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/var/lib/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:159:in `instrument'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+/var/lib/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/base.rb:136:in `process'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/rendering.rb:44:in `process'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal.rb:195:in `dispatch'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal.rb:231:in `block in action'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/routing/route_set.rb:80:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/routing/route_set.rb:48:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/journey/router.rb:71:in `block in call'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/journey/router.rb:59:in `each'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/journey/router.rb:59:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/routing/route_set.rb:655:in `call'
+/var/lib/gems/1.9.1/gems/rack-1.5.2/lib/rack/etag.rb:23:in `call'
+/var/lib/gems/1.9.1/gems/rack-1.5.2/lib/rack/conditionalget.rb:25:in `call'
+/var/lib/gems/1.9.1/gems/rack-1.5.2/lib/rack/head.rb:11:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/flash.rb:241:in `call'
+/var/lib/gems/1.9.1/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+/var/lib/gems/1.9.1/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/cookies.rb:486:in `call'
+/var/lib/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/query_cache.rb:36:in `call'
+/var/lib/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+/var/lib/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/migration.rb:369:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/var/lib/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:373:in `_run__857453335748619983__call__callbacks'
+/var/lib/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:80:in `run_callbacks'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/reloader.rb:64:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+/var/lib/gems/1.9.1/gems/railties-4.0.0/lib/rails/rack/logger.rb:38:in `call_app'
+/var/lib/gems/1.9.1/gems/railties-4.0.0/lib/rails/rack/logger.rb:21:in `block in call'
+/var/lib/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+/var/lib/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/tagged_logging.rb:25:in `tagged'
+/var/lib/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/tagged_logging.rb:67:in `tagged'
+/var/lib/gems/1.9.1/gems/railties-4.0.0/lib/rails/rack/logger.rb:21:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+/var/lib/gems/1.9.1/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+/var/lib/gems/1.9.1/gems/rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+/var/lib/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+/var/lib/gems/1.9.1/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+/var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/static.rb:64:in `call'
+/var/lib/gems/1.9.1/gems/railties-4.0.0/lib/rails/engine.rb:511:in `call'
+/var/lib/gems/1.9.1/gems/railties-4.0.0/lib/rails/application.rb:97:in `call'
+/var/lib/gems/1.9.1/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+/var/lib/gems/1.9.1/gems/rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+/var/lib/gems/1.9.1/gems/rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+/usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered admin/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 39ms
+
+ActionView::Template::Error (/home/ambar/Desktop/LIY/liy/app/views/admin/index.html.erb:5: syntax error, unexpected ')'
+<h2> ';@output_buffer.append=( Time.now() <);@output_buffer.to_s
+                                            ^
+/home/ambar/Desktop/LIY/liy/app/views/admin/index.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+/home/ambar/Desktop/LIY/liy/app/views/admin/index.html.erb:8: syntax error, unexpected keyword_end, expecting ')'):
+    2: <p>Find me in app/views/admin/index.html.erb</p>
+    3: <h1> -->
+    4: <h1> Welcome </h1>
+    5: <h2> <%= Time.now() <%>
+  actionpack (4.0.0) lib/action_view/template.rb:299:in `module_eval'
+  actionpack (4.0.0) lib/action_view/template.rb:299:in `compile'
+  actionpack (4.0.0) lib/action_view/template.rb:248:in `block in compile!'
+  <internal:prelude>:10:in `synchronize'
+  actionpack (4.0.0) lib/action_view/template.rb:236:in `compile!'
+  actionpack (4.0.0) lib/action_view/template.rb:142:in `block in render'
+  activesupport (4.0.0) lib/active_support/notifications.rb:161:in `instrument'
+  actionpack (4.0.0) lib/action_view/template.rb:141:in `render'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:49:in `block (2 levels) in render_template'
+  actionpack (4.0.0) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.0) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:48:in `block in render_template'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:56:in `render_with_layout'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:47:in `render_template'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionpack (4.0.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionpack (4.0.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:127:in `_render_template'
+  actionpack (4.0.0) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:120:in `render_to_body'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+  actionpack (4.0.0) lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:97:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.0.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /usr/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (4.0.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.0.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.0.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.0.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.0) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:403:in `_run__2788208824870162303__process_action__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+  activerecord (4.0.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.0) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__857453335748619983__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.8ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2014-09-26 12:29:27 +0530
+Processing by AdminController#index as HTML
+  Rendered admin/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 12:29:27 +0530
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-09-26 12:29:27 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 12:29:27 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 12:29:27 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 12:29:27 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-09-26 12:29:27 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 12:29:27 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 12:29:27 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-09-26 12:29:27 +0530
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-09-26 12:29:27 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 12:29:27 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 12:29:27 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 12:29:27 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 12:29:27 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 12:29:32 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /var/lib/gems/1.9.1/gems/railties-4.0.0/lib/rails/templates/rails/welcome/index.html.erb (0.9ms)
+Completed 200 OK in 55ms (Views: 54.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2014-09-26 12:29:36 +0530
+Processing by AdminController#index as HTML
+  Rendered admin/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 12:29:36 +0530
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-09-26 12:29:36 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-09-26 12:29:36 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 12:29:36 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 12:29:36 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 12:29:36 +0530
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-09-26 12:29:36 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 12:29:36 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 12:29:36 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 12:29:36 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 12:29:36 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 12:29:36 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-09-26 12:29:36 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 12:29:36 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 12:30:15 +0530
+Processing by AdminController#index as HTML
+  Rendered admin/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 12:30:16 +0530
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-09-26 12:30:16 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 12:30:16 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 12:30:16 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-09-26 12:30:16 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 12:30:16 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:16 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:16 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:16 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:16 +0530
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:16 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:16 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:16 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:16 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 12:30:21 +0530
+Processing by AdminController#index as HTML
+  Rendered admin/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 12:30:21 +0530
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-09-26 12:30:21 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-09-26 12:30:22 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 12:30:22 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 12:30:22 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:22 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 12:30:22 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:22 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:22 +0530
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:22 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:22 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:22 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:22 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:22 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 12:30:24 +0530
+Processing by AdminController#index as HTML
+  Rendered admin/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 12:30:24 +0530
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-09-26 12:30:24 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-09-26 12:30:24 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 12:30:24 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 12:30:24 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 12:30:24 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:24 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:24 +0530
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:24 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:24 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:24 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:24 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:24 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 12:30:24 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 12:32:05 +0530
+Processing by AdminController#index as HTML
+  Rendered admin/index.html.erb within layouts/application (34.6ms)
+Completed 500 Internal Server Error in 37ms
+
+ActionView::Template::Error (undefined method `link_to_logout' for #<#<Class:0x007ff510763ba0>:0x007ff510762ed0>):
+    4: <h1> Welcome </h1>
+    5: <h2> Abhi ka time<%= Time.now %> </h2>
+    6: <br>
+    7: <h2> <% link_to_logout "Logout" %>
+  app/views/admin/index.html.erb:7:in `_app_views_admin_index_html_erb___1859020565963728999_70345259945540'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 12:34:57 +0530
+Processing by AdminController#index as HTML
+  Rendered admin/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 12:34:57 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 12:34:57 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 12:34:57 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-09-26 12:34:57 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 12:34:57 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 12:34:57 +0530
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-09-26 12:34:57 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 12:34:57 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 12:34:57 +0530
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-09-26 12:34:57 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-09-26 12:34:57 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 12:34:57 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 12:34:57 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 12:34:57 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 12:36:14 +0530
+Processing by AdminController#index as HTML
+  Rendered admin/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 12:36:14 +0530
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-09-26 12:36:14 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 12:36:15 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 12:36:15 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-09-26 12:36:15 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 12:36:15 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 12:36:15 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 12:36:15 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 12:36:15 +0530
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-09-26 12:36:15 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-09-26 12:36:15 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 12:36:15 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 12:36:15 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 12:36:15 +0530
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2014-09-26 12:36:17 +0530
+Processing by SessionsController#destroy as HTML
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `name' for nil:NilClass):
+  app/controllers/sessions_controller.rb:24:in `destroy'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.2ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2014-09-26 12:36:17 +0530
+Processing by SessionsController#destroy as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `name' for nil:NilClass):
+  app/controllers/sessions_controller.rb:24:in `destroy'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.0ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2014-09-26 12:37:54 +0530
+Processing by SessionsController#destroy as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `name' for nil:NilClass):
+  app/controllers/sessions_controller.rb:24:in `destroy'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.7ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2014-09-26 12:37:55 +0530
+Processing by SessionsController#destroy as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `name' for nil:NilClass):
+  app/controllers/sessions_controller.rb:24:in `destroy'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.3ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2014-09-26 12:38:44 +0530
+Processing by SessionsController#destroy as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `name' for nil:NilClass):
+  app/controllers/sessions_controller.rb:24:in `destroy'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.9ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2014-09-26 12:40:45 +0530
+Processing by SessionsController#destroy as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/sessions_controller.rb:17:in `destroy'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.6ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2014-09-26 12:40:46 +0530
+Processing by SessionsController#destroy as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/sessions_controller.rb:17:in `destroy'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (41.3ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2014-09-26 12:41:15 +0530
+Processing by SessionsController#destroy as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/sessions_controller.rb:17:in `destroy'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.3ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2014-09-26 12:41:15 +0530
+Processing by SessionsController#destroy as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/sessions_controller.rb:17:in `destroy'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.9ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2014-09-26 12:41:27 +0530
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-09-26 12:41:27 +0530
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:28 +0530
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:28 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:28 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:28 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:28 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:28 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:28 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:28 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:28 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:28 +0530
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:28 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:28 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:28 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:28 +0530
+
+
+Started POST "/login" for 127.0.0.1 at 2014-09-26 12:41:33 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VxtCkAOFINEXHXPh5sv3DB5BHLvbnAByn+jdvci960c=", "name"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser1 Load (0.1ms)[0m  SELECT "user1s".* FROM "user1s" WHERE "user1s"."name" = 'admin' LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 164ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2014-09-26 12:41:33 +0530
+Processing by AdminController#index as HTML
+  Rendered admin/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:33 +0530
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:33 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:33 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:33 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:33 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:33 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:33 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:33 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:33 +0530
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:33 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:33 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:33 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:33 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:33 +0530
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2014-09-26 12:41:35 +0530
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-09-26 12:41:35 +0530
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2014-09-26 12:41:38 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VxtCkAOFINEXHXPh5sv3DB5BHLvbnAByn+jdvci960c=", "name"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser1 Load (0.3ms)[0m  [1mSELECT "user1s".* FROM "user1s" WHERE "user1s"."name" = 'admin' LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 121ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2014-09-26 12:41:38 +0530
+Processing by AdminController#index as HTML
+  Rendered admin/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:39 +0530
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:39 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:39 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:39 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:39 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:39 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:39 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:39 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:39 +0530
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:39 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:39 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:39 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:39 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:39 +0530
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2014-09-26 12:41:42 +0530
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-09-26 12:41:42 +0530
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 12:41:47 +0530
+Processing by AdminController#index as HTML
+  Rendered admin/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:47 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:47 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:47 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:47 +0530
+
+
+Started GET "/assets/user1s.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:47 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-09-26 12:41:47 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:47 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:47 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:47 +0530
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:47 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:47 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:47 +0530
+
+
+Started GET "/assets/user1s.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:47 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-09-26 12:41:47 +0530
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2014-09-26 12:41:49 +0530
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-09-26 12:41:49 +0530
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms)

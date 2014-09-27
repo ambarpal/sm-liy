@@ -1,0 +1,31 @@
+<h1>Listing user1s</h1>
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user1s.each do |user1| %>
+      <tr>
+        <td><%= user1.name %></td>
+        <td><%= user1.email %></td>
+        <td><%= link_to 'Show', user1 %></td>
+        <td><%= link_to 'Edit', edit_user1_path(user1) %></td>
+        <td><%= link_to 'Destroy', user1, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User1', new_user1_path %>
