@@ -1,10 +1,8 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
-
 <div class="depot_form">
   <% if flash[:alert] %>
-    <p id="notice"><%= flash[:alert] %></p>
+    <p id="notice"><%= flash[:alert]; params[:notice]%></p>
   <% end %>
+  <p id="notice"><%= flash[:alert]; params[:notice]%></p>
   <%= form_tag do %>
     <fieldset>
       <legend>Please Log In</legend>

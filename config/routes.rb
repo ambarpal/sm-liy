@@ -7,6 +7,8 @@
 # Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
 #---
 Liy::Application.routes.draw do
+  resources :mails
+
   get 'admin' => 'admin#index'
   controller :sessions do
     get  'login' => :new

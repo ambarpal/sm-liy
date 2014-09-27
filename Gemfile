@@ -43,3 +43,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+#web-app-theme https://github.com/pilu/web-app-theme
+gem 'web-app-theme', '~> 0.8.0'
