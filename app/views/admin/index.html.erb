@@ -1,8 +1,19 @@
 <!-- <h1>Admin#index</h1>
 <p>Find me in app/views/admin/index.html.erb</p>
 <h1> -->
-<h1> Welcome </h1>
-<h4> Abhi ka time <%= Time.now %> </h4>
-<h3> toofani krte hain part 2 </h3>
-<br>
-<h2> <%= link_to 'Logout', sessions_destroy_path %> </h2>
+<h1> Welcome</h1>
+<div class="block" id="block-text">  
+  <div class="content">
+    <h2 class="title">Mails</h2>
+    <div class="inner">
+		<%@mailsReceived.each do |mail| %>
+		<tr>
+			<td><%= mail.from %>: <%=mail.subject%> </td> <br>
+			<td><%= mail.description %> </td>
+		</tr>
+	<% end %>
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>
