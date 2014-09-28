@@ -24,11 +24,12 @@ Liy::Application.routes.draw do
   # first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   # You can have the root of your site routed with "root"
-  root 'admin#index', as: 'index'
+  root 'sessions#create', as: 'index'
   # ...
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  # match '/422', to: 'errors#unprocessable', via: :all
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
