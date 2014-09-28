@@ -7,9 +7,13 @@
 # Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
 #---
 Liy::Application.routes.draw do
+  get "search/index"
   resources :mails
 
   get 'admin' => 'admin#index'
+  get 'search' => 'search#index'
+  get 'logout' => 'sessions#destroy'
+
   controller :sessions do
     get  'login' => :new
     post 'login' => :create
@@ -18,7 +22,11 @@ Liy::Application.routes.draw do
 
   get "sessions/create"
   get "sessions/destroy"
+
   resources :user1s
+
+  get "search/index"
+  post "search/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -14,7 +14,7 @@
         <ul class="wat-cf">
           <li><a href="#"><%= link_to session[:user_name],User1.where(name: session[:user_name])[0] %></a></li>
           <li><a href="#"><%= t("web-app-theme.settings", :default => "Settings") %></a></li>
-          <li><a href= <%= sessions_destroy_path %> class="logout">Logout</a></li>
+          <li><a href="/logout" class="logout"><%= t("web-app-theme.logout", :default => "Logout") %></a></li>
         </ul>
       </div>
       <div id="main-navigation">
