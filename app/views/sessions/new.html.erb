@@ -1,22 +1,35 @@
-<div class="depot_form">
-  <% if flash[:alert] %>
-    <p id="notice"><%= flash[:alert]; params[:notice]%></p>
-  <% end %>
-  <p id="notice"><%= flash[:alert]; params[:notice]%></p>
+<h1> sm-liy </h1>
+<div class="block" id="block-login">
+  <h2>Sign in</h2>
+  <div class="content login">
+    <div class="flash">
+      <% flash.each do |type, message| %>
+        <div class="message notice">
+          <p>
+            <%= message %>
+          </p>
+        </div>
+      <% end %>
+    </div>
   <%= form_tag do %>
     <fieldset>
       <legend>Please Log In</legend>
-      <div>
-        <%= label_tag :name, 'Name:' %>
+      <div class="group wat-cf">
+        <div class="left">
+          <%= label_tag :name, 'Name:' %>
+        </div>
+        <div class="right">
         <%= text_field_tag :name, params[:name] %>
+        </div>
       </div>
-      <div>
-        <%= label_tag :password, 'Password:' %>
-        <%= password_field_tag :password, params[:password] %>
+      <div class="group wat-cf">
+        <div class="left"><%= label_tag :password, 'Password:' %></div>
+        <div class="right"><%= password_field_tag :password, params[:password] %></div>
       </div>
-      <div>
-        <%= submit_tag "Login" %>
+      <div class="group wat-cf">
+        <div class="right"><div class="button"><%= submit_tag "Login" %></div></div>
       </div>
     </fieldset>
   <% end %>
+  </div>
 </div>

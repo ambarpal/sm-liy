@@ -170,7 +170,9 @@ body {
 }
 
 #footer {
+  height: 4em;
   padding-bottom: 20px;
+  clear: both;
 }
 
 /* pagination */
