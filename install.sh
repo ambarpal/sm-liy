@@ -3,17 +3,17 @@ mkdir liy
 cd liy
 
 print "checking/installing git"
-apt-get install git
+apt-get -y install git
 
 print "cloning repository"
 git clone git://github.com/ambarpal/sm-liy.git
 cd sm-liy
 
 print  "installing dependencies"
-apt-get install ruby
-apt-get install bundler
-apt-get install libsqlite3-dev
-apt-get install nodejs
+apt-get -y install ruby
+apt-get -y install bundler
+apt-get -y install libsqlite3-dev
+apt-get -y install nodejs
 bundle install
 
 print "begin the magic"
