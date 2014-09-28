@@ -3,7 +3,7 @@
 This is how to get this ruby-on-rails application up and running:
 
 ==Linux:
-  1.  Download the install.sh file from this directory
+  1.  Download only the install.sh file from this directory, not the entire directory
   2.  Make it executable by opening up a terminal(Ctrl+Alt+T), going to the directory where install.sh resides and typing in the command chmod 777 install.sh
   3.  Run ./install.sh
   4.  Go to 0.0.0.0:3000 or localhost/3000 on your browser to start the application
