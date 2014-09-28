@@ -1,28 +1,11 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is how to get this ruby-on-rails application up and running:
 
-Things you may want to cover:
+==Linux:
+  1.  Download the install.sh file from this directory
+  2.  Make it executable by opening up a terminal(Ctrl+Alt+T), going to the directory where install.sh resides and typing in the command chmod 777 install.sh
+  3.  Run ./install.sh
+  4.  Go to 0.0.0.0:3000 or localhost/3000 on your browser to start the application
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
