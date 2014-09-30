@@ -32,7 +32,7 @@ Liy::Application.routes.draw do
   # first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   # You can have the root of your site routed with "root"
-  root 'sessions#create', as: 'index'
+  root 'user1s#show', as: 'index'
   # ...
 
   # Example of regular route:

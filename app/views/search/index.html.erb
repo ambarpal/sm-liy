@@ -1,8 +1,11 @@
 <%= form_tag :controller => 'search', :action => 'index', :method => 'get' do %>
      <%= text_field_tag :s, params[:s], :id => 'search_field' %>
-     <% params[:uname] = session[:user_name] %>
      <%= submit_tag "Search", :name => nil %>
 <% end %>
-<% @mails.each do |mail| %>
-	<%= mail.subject %>
-<% end %>
+<% @mails.each do |mail| 
+	if (mail.from=session[:user_name])
+%>
+	<%= label_tag mail.subject %> <br>
+<%
+	end 
+end %>

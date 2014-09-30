@@ -26,7 +26,7 @@ class User1sController < ApplicationController
   # POST /user1s.json
   def create
     @user1 = User1.new(user1_params)
-
+    #flash[:alert] = user1_params
     respond_to do |format|
       if @user1.save
         format.html { redirect_to user1s_url, notice: "User #{@user1.name} was successfully created." }
@@ -65,7 +65,11 @@ class User1sController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user1
-      @user1 = User1.find(params[:id])
+      if params[:id]
+        @user1 = User1.find(params[:id])
+      else
+        redirect_to login_url
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
